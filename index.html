@@ -38,21 +38,58 @@
         </div>
     </nav>
 
-    <header class="hero-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 text-white">
-                    <h1 class="display-2 hero-title mb-4">Elevate Your Living <br> Experience.</h1>
-                    <p class="fs-5 mb-5 opacity-75">Premium hardwood flooring and avant-garde wallpaper <br> designs
-                        curated for the modern architectural aesthetic.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="btn btn-primary px-3 px-md-5">Explore Collection</a>
-                        <a href="#" class="btn btn-outline-light px-3 px-md-5">Our Story</a>
-                    </div>
-                </div>
-            </div>
+  <header class="hero-banner">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Text Column -->
+      <div class="col-lg-6 text-white mb-5 mb-lg-0">
+        <h1 class="display-2 hero-title mb-4">Elevate Your Living <br> Experience.</h1>
+        <p class="fs-5 mb-5 opacity-75">
+          Premium hardwood flooring and avant-garde wallpaper designs <br>
+          curated for the modern architectural aesthetic.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#" class="btn btn-primary px-3 px-md-5">Explore Collection</a>
+          <a href="#" class="btn btn-outline-light px-3 px-md-5">Our Story</a>
         </div>
-    </header>
+      </div>
+
+      <!-- Right Form Column -->
+      <div class="col-lg-6">
+        <div class="hero-form p-4 p-lg-5 bg-white rounded-4 shadow-lg">
+          <h3 class="mb-4">Request a Free Estimate</h3>
+          <form id="bannerForm">
+            <div class="mb-3">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="mb-3">
+              <input type="phone" name="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="mb-3">
+              <select name="service_type" class="form-select" required>
+                <option value="" disabled selected>Select a Service</option>
+                <option>Flooring Installation</option>
+                <option>Wall Covering</option>
+                <option>Exterior Facade</option>
+                <option>Window Design</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
 
     <!-- Floating Form Overlay -->
     <div id="formOverlay">

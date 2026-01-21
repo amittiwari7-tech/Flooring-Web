@@ -76,8 +76,21 @@ body {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     margin-bottom: -50px;
-   
 }
+
+.hero-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Form headings */
+.hero-form h3 {
+    font-weight: 700;
+    color: #111;
+}
+
 
 .hero-title {
     font-weight: 800;
@@ -89,10 +102,10 @@ body {
 /* Overlay background */
 #formOverlay {
   position: fixed;
-  top: 55%;
+  top: 50%;
   left: 45%;
   transform: translate(-50%,-50%);
-  width: 50vw;
+  width: 60vw !important;
   height: 50vh;
   background: rgba(0, 0, 0, 0.0);
   justify-content: center;   
@@ -104,7 +117,7 @@ body {
 
 /* Floating form box */
 .floating-form {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.6);
   padding: 30px;
   width: 90%;
   max-width: 600px;
@@ -131,7 +144,7 @@ body {
 .overlayinfo h3 {
   font-size: clamp(10px, 5vw, 25px);
   font-weight: 700;
-  color: #000;
+  color: #fff;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -139,7 +152,7 @@ body {
 .overlayinfo h5 {
   font-size: clamp(12px, 2vw, 18px);
   font-weight: 400;
-  color: blue;
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -152,7 +165,7 @@ body {
   right: 15px;
   font-size: 28px;
   cursor: pointer;
-  color: #333;
+  color: #fff;
 }
 
 /* Animation */
@@ -534,13 +547,19 @@ body {
 
 
 @media (max-width: 767px) {
-    .hero-banner {
-        border-bottom-left-radius: 0px;  
-        border-bottom-right-radius: 0px; 
-        margin-bottom: 0px;             
-        height: auto;                  
-        padding: 60px 0;                
+     .hero-banner {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
     }
+    .hero-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
     .fab-container{
         display: none;
