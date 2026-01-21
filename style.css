@@ -72,7 +72,7 @@ body {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     margin-bottom: -50px;
-    /* Overlap effect */
+   
 }
 
 .hero-title {
@@ -400,4 +400,15 @@ body {
 
 .phone {
     background-color: #3b82f6;
+}
+
+
+@media (max-width: 767px) {
+    .hero-banner {
+        border-bottom-left-radius: 0px;  
+        border-bottom-right-radius: 0px; 
+        margin-bottom: 0px;             
+        height: auto;                  
+        padding: 60px 0;                
+    }
 }
