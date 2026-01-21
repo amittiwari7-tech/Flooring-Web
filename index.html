@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Angel<span class="text-primary">Decor.</span></a>
+            <a class="navbar-brand fw-bold" href="#">Angels <span class="text-primary">Decor.</span></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,6 +53,58 @@
             </div>
         </div>
     </header>
+
+    <!-- Floating Form Overlay -->
+<div id="formOverlay">
+  <div class="floating-form">
+    
+    <!-- Close Icon -->
+    <span class="close-btn" onclick="closeForm()">×</span>
+
+    <!-- Your Existing Form -->
+    <form id="contact-form">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label small fw-bold">Full Name</label>
+          <input type="text" name="name" class="form-control custom-input"
+                 placeholder="Enter your Name..." required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label small fw-bold">Phone Number</label>
+          <input type="phone" name="phone" class="form-control custom-input"
+                 placeholder="Enter your Phone Number.." required>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label small fw-bold">Service Type</label>
+          <select name="service_type" class="form-select custom-input">
+            <option selected>Select a Service</option>
+            <option>Flooring Installation</option>
+            <option>Wall Covering</option>
+            <option>Exterior Facade</option>
+            <option>Window Design</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label small fw-bold">Your Message</label>
+          <textarea name="message" class="form-control custom-input" rows="4"
+                    placeholder="Tell us about your project..." required></textarea>
+        </div>
+
+        <div class="col-12 mt-4">
+          <button type="submit"
+                  class="btn btn-primary btn-lg w-100 rounded-pill shadow">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+<!-- floating form overlay End -->
 
     <section class="py-5" style="margin-top: 80px;" id="wallCover">
         <div class="container">
@@ -685,13 +737,14 @@
         <div class="container py-5">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <a class="navbar-brand fw-bold fs-3 mb-3 d-block" href="#">Angel<span
+                    <a class="navbar-brand fw-bold fs-3 mb-3 d-block" href="#">Angels<span
                             class="text-primary">Decor.</span></a>
                     <p class="text-muted mb-4">Elevating interior and exterior spaces with premium materials and
                         avant-garde architectural designs since 2010.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/angels_decor_noida?igsh=MXQ1aTJ3eDJhamxoaw==" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/angels_decor_noida?igsh=MXQ1aTJ3eDJhamxoaw=="
+                            class="social-icon"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
                     </div>
@@ -765,15 +818,29 @@
     </div>
     <!-- floating Section End -->
 
+    <!-- sticky Section Start -->
+
+    <div class="bottom-stick">
+        <a href="tel:+917042743575" class="stick-btn call-btn">
+            📞 Call
+        </a>
+
+        <button class="stick-btn estimate-btn" onclick="openForm()">
+            📝 Estimate
+        </button>
+    </div>
+
+    <!-- sticky Section End -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </body>
 <script type="text/javascript">
 
-      (function(){
-      emailjs.init("j5Q7tPlp07cbI7opa");
-   })();
+    (function () {
+        emailjs.init("j5Q7tPlp07cbI7opa");
+    })();
 
     document.getElementById('fab-trigger').addEventListener('click', function () {
         const container = document.querySelector('.fab-container');
@@ -789,23 +856,33 @@
 
 
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+
+        const btn = event.target.querySelector('button');
+        btn.innerText = 'Sending...';
+
+        emailjs.sendForm('service_12lgifs', 'template_mil6b4p', this)
+            .then(function () {
+                alert('Email Sent Successfully...');
+                btn.innerText = 'Send Message';
+                document.getElementById('contact-form').reset();
+            }, function (error) {
+                alert('Error in Sending Email ... ' + JSON.stringify(error));
+                btn.innerText = 'Send Message';
+            });
+    });
+
 
    
-    const btn = event.target.querySelector('button');
-    btn.innerText = 'Sending...';
+ 
 
-    emailjs.sendForm('service_12lgifs', 'template_mil6b4p', this)
-        .then(function() {
-            alert('Email Sent Successfully...');
-            btn.innerText = 'Send Message';
-            document.getElementById('contact-form').reset();
-        }, function(error) {
-            alert('Error in Sending Email ... ' + JSON.stringify(error));
-            btn.innerText = 'Send Message';
-        });
-});
+  function closeForm() {
+    document.getElementById("formOverlay").style.display = "none";
+  }
+
+
 </script>
 
 </html>

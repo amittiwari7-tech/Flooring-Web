@@ -9,7 +9,11 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--light-bg);
     color: var(--dark-accent);
+    overflow-x: hidden;
 }
+
+
+
 
 /* Navbar Refined */
 .navbar {
@@ -80,6 +84,61 @@ body {
     letter-spacing: -2px;
     line-height: 1.1;
 }
+
+
+/* Overlay background */
+#formOverlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50vw;
+  height: 50vh;
+  background: rgba(0, 0, 0, 0.0);
+  justify-content: center;   
+  align-items: center;        
+  z-index: 9999;
+}
+
+
+/* Floating form box */
+.floating-form {
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  position: relative;
+  animation: slideDown 0.4s ease;
+  max-width: 100%;  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/* Close icon */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 
 /* Modernized Wall Cards */
 .wall-card {
@@ -403,6 +462,48 @@ body {
 }
 
 
+.bottom-stick {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 99%;
+  display: flex;
+  z-index: 9998;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+.stick-btn {
+  flex: 1;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Call button */
+.call-btn {
+  background: #28a745;
+}
+
+/* Estimate button */
+.estimate-btn {
+  background: #0d6efd;
+}
+
+/* Desktop optional (hide bar if needed) */
+@media (min-width: 992px) {
+  .bottom-stick {
+    display: none;
+  }
+}
+
+
+
 @media (max-width: 767px) {
     .hero-banner {
         border-bottom-left-radius: 0px;  
@@ -410,5 +511,21 @@ body {
         margin-bottom: 0px;             
         height: auto;                  
         padding: 60px 0;                
+    }
+
+    .fab-container{
+        display: none;
+    }
+
+    #formOverlay{
+        width: 100%;
+        height: 100%;
+       
+    }
+
+    .floating-form{
+ left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
     }
 }
