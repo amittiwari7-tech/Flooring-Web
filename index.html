@@ -55,56 +55,60 @@
     </header>
 
     <!-- Floating Form Overlay -->
-<div id="formOverlay">
-  <div class="floating-form">
-    
-    <!-- Close Icon -->
-    <span class="close-btn" onclick="closeForm()">×</span>
+    <div id="formOverlay">
 
-    <!-- Your Existing Form -->
-    <form id="contact-form">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label small fw-bold">Full Name</label>
-          <input type="text" name="name" class="form-control custom-input"
-                 placeholder="Enter your Name..." required>
+        <div class="floating-form">
+            <div class="overlayinfo">
+                <h3 style="text-align: center;">Premium Interior Design Services in Noida</h3>
+                <h5 style="text-align: center;">Elegant, Luxury Home Interiors Crafted <br> with Quality and Value</h5>
+            </div>
+
+            <!-- Close Icon -->
+            <span class="close-btn" onclick="closeForm()">×</span>
+
+            <!-- Your Existing Form -->
+            <form id="contact-form">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold">Full Name</label>
+                        <input type="text" name="name" class="form-control custom-input"
+                            placeholder="Enter your Name..." required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold">Phone Number</label>
+                        <input type="phone" name="phone" class="form-control custom-input"
+                            placeholder="Enter your Phone Number.." required>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label small fw-bold">Service Type</label>
+                        <select name="service_type" class="form-select custom-input">
+                            <option selected>Select a Service</option>
+                            <option>Flooring Installation</option>
+                            <option>Wall Covering</option>
+                            <option>Exterior Facade</option>
+                            <option>Window Design</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label small fw-bold">Your Message</label>
+                        <textarea name="message" class="form-control custom-input" rows="4"
+                            placeholder="Tell us about your project..." required></textarea>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill shadow">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+            </form>
+
         </div>
-
-        <div class="col-md-6">
-          <label class="form-label small fw-bold">Phone Number</label>
-          <input type="phone" name="phone" class="form-control custom-input"
-                 placeholder="Enter your Phone Number.." required>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label small fw-bold">Service Type</label>
-          <select name="service_type" class="form-select custom-input">
-            <option selected>Select a Service</option>
-            <option>Flooring Installation</option>
-            <option>Wall Covering</option>
-            <option>Exterior Facade</option>
-            <option>Window Design</option>
-          </select>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label small fw-bold">Your Message</label>
-          <textarea name="message" class="form-control custom-input" rows="4"
-                    placeholder="Tell us about your project..." required></textarea>
-        </div>
-
-        <div class="col-12 mt-4">
-          <button type="submit"
-                  class="btn btn-primary btn-lg w-100 rounded-pill shadow">
-            Send Message
-          </button>
-        </div>
-      </div>
-    </form>
-
-  </div>
-</div>
-<!-- floating form overlay End -->
+    </div>
+    <!-- floating form overlay End -->
 
     <section class="py-5" style="margin-top: 80px;" id="wallCover">
         <div class="container">
@@ -875,14 +879,14 @@
     });
 
 
-   
-   function openForm() {
-    document.getElementById("formOverlay").style.display = "block";
-  }
 
-  function closeForm() {
-    document.getElementById("formOverlay").style.display = "none";
-  }
+    function openForm() {
+        document.getElementById("formOverlay").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("formOverlay").style.display = "none";
+    }
 
 
 </script>
