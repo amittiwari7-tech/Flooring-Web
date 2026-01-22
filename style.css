@@ -559,21 +559,27 @@ body {
         width: 90%;
         margin: 0 auto;
     }
-}
 
-    .fab-container{
+       .fab-container{
         display: none;
     }
 
     #formOverlay{
-        width: 100%;
+        width: 100% !important;
         height: 100%;
+       
+       
+    }
+
+    #contact-form{
        
     }
 
     .floating-form{
- left: 50%;
+        left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
     }
 }
+
+ 
